@@ -1,4 +1,6 @@
-Idle curiosity...
+Out of idle curiosity, a quick look at 
+the mean, standard deviation, and maximum
+lengths of a line of source code I typically write.
 
 BUILD:
 $ cabal-dev install
