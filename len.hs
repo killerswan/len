@@ -75,17 +75,16 @@ countAndDisplay path content =
       mx :: Double -- ?
       mx = foldl max 0.0 lineCounts
    in
-      do
-         TIO.putStrLn . T.concat . (map T.pack) $ [     "max: ",    show mx, 
-                                                    ",\t mean: ",   show m,
-                                                    ",\t stddev: ", show s,
-                                                    ",\t path: ",   path ]
+      TIO.putStrLn . T.concat . map T.pack $ [ "max: "       , show mx
+                                             , ",\t mean: "  , show m
+                                             , ",\t stddev: ", show s
+                                             , ",\t path: "  , path
+                                             ]
 
 
 main :: IO ()
 main = 
-   do 
-      args <- getArgs
+   do args <- getArgs
       let (actions, nonOptions, _) = getOpt Permute options args
       _ <- foldl (>>=) (return defaultOpts) actions
 
