@@ -64,7 +64,7 @@ countAndDisplay :: FilePath -> B.ByteString -> IO ()
 countAndDisplay path content =
    let
       -- list of line lengths
-      lineCounts = map (fromIntegral . T.length) (T.lines . TE.decodeUtf8 $ content)
+      lineCounts = map fromIntegral . filter (> 0) . map T.length $ (T.lines . TE.decodeUtf8 $ content)
 
       m :: Double
       m = Stat.mean lineCounts
@@ -76,7 +76,7 @@ countAndDisplay path content =
       mx = foldl max 0.0 lineCounts
    in
       do
-         TIO.putStrLn . T.concat . (map T.pack) $ [ "max: ",      show mx, 
+         TIO.putStrLn . T.concat . (map T.pack) $ [     "max: ",    show mx, 
                                                     ",\t mean: ",   show m,
                                                     ",\t stddev: ", show s,
                                                     ",\t path: ",   path ]

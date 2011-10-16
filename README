@@ -10,6 +10,6 @@ Usage: len [file1 file2 ...]
 
 RUN:
 $ ./cabal-dev/bin/len len.hs
-max: 84.0,	 mean: 27.638297872340424,	 stddev: 24.135750070801826,	 path: len.hs
+max: 103.0,	 mean: 35.876712328767134,	 stddev: 22.322102403397455,	 path: len.hs
 
 
