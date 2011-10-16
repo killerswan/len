@@ -1,0 +1,15 @@
+Idle curiosity...
+
+BUILD:
+$ cabal-dev install
+
+USAGE:
+$ ./cabal-dev/bin/len -h
+Usage: len [file1 file2 ...]
+  -h  --help  display this help
+
+RUN:
+$ ./cabal-dev/bin/len len.hs
+max: 84.0,	 mean: 27.638297872340424,	 stddev: 24.135750070801826,	 path: len.hs
+
+

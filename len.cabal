@@ -1,0 +1,33 @@
+name:                len
+version:             1.0
+synopsis:            Line length statistics
+description:         
+    .
+    .
+category:            Self-measurement
+stability:           experimental
+license:             BSD3
+license-file:        LICENSE
+author:              Kevin Cantu <me@kevincantu.org>
+maintainer:          Kevin Cantu <me@kevincantu.org>
+copyright:           (c) 2011 Kevin Cantu
+homepage:            https://github.com/killerswan/
+bug-reports:         https://github.com/killerswan/
+build-type:          Simple
+cabal-version:       >=1.8
+
+source-repository head
+   type:       git
+   location:   https://github.com/killerswan/
+
+executable len
+   main-is:          len.hs
+   hs-source-dirs:   .
+   ghc-options:      -Wall -O2 -fspec-constr-count=15
+   build-depends:    base           >= 4 && < 5,
+                     bytestring     >= 0 && < 1,
+                     text           >= 0 && < 1,
+                     hstats,
+                     containers     >= 0 && < 1
+
+
